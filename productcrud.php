@@ -21,7 +21,7 @@
                           </div>
                             </div>
                               <div class="navitem2">
-                                <a href="#">producten</a>
+                                <a href="product.php">producten</a>
                               <div class="navitem2-sub">
                                 <a href="klant.php">klantcrud</a>
                                 <a href="productcrud.php">productcrud</a>

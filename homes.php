@@ -7,9 +7,9 @@
   <link href="homes.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> 
 </head>
 <body>
-      <nav>
+<nav>
         <div class="navimg">
-          <a href="homes.php"><img src="img/LLC.png" alt="llc"></a>
+        <a href="homes.php"><img src="img/LLC.png" alt="llc"></a>
             </div>
                 <div class="nav-cont">
                   <div class="navitem1">
@@ -21,7 +21,7 @@
                           </div>
                             </div>
                               <div class="navitem2">
-                                <a href="#">producten</a>
+                                <a href="product.php">producten</a>
                               <div class="navitem2-sub">
                                 <a href="klant.php">klantcrud</a>
                                 <a href="productcrud.php">productcrud</a>

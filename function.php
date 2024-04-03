@@ -237,13 +237,13 @@ function printCrudbestellingen($result3){
       
       // Wijzig knopje
       $table .= "<td>
-          <form method='post' action='update_brouwer.php?productid=$row[productid]' >       
+          <form method='post' action='update.php?productid=$row[productid]' >       
               <button>Wijzig</button>	 
           </form></td>";
 
       // Delete knopje
       $table .= "<td>
-          <form method='post' action='delete_brouwer.php?productid=$row[productid]' >       
+          <form method='post' action='delete.php?productid=$row[productid]' >       
               <button>Verwijder</button>	 
           </form></td>";
 
