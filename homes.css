@@ -1,0 +1,135 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: #5265AA;
+  min-height: 100vh; 
+}
+
+nav{
+  background-color: #3D3C5A;
+  display: flex;
+  z-index: 0;
+}
+
+.nav-cont a {
+  font-size: 40px;
+  color:#5265AA;
+  text-decoration: none;
+}
+
+.nav-cont {
+  display: flex;
+  justify-content: center;
+  align-items:  baseline;
+  padding-left: 40%;
+  margin: 10px; 
+}
+
+.navimg {
+  padding-top: 1%;
+  padding-left: 1%;
+  margin: 0;
+}
+
+.navitem1,
+.navitem2,
+.navitem3{
+ margin: 20px;
+}
+
+
+.navitem1-sub,
+.navitem2-sub,
+.navitem3-sub{
+  display: none;
+  font-size: 20px;
+  border: 5px solid #3D3C5A ;
+  z-index: 1;
+}
+
+.navitem1:hover .navitem1-sub,
+.navitem2:hover .navitem2-sub,
+.navitem3:hover .navitem3-sub {
+  display: block;
+  position: absolute;
+  width: 190px;
+  height: 150px;
+  background-color: whitesmoke;
+}
+
+.navitem2:hover .navitem2-sub{
+  width: 195px;
+  height: 160px;
+}
+
+.navitem3:hover .navitem3-sub{
+  width: 170px;
+  
+}
+
+.navitem1-sub :hover,
+.navitem2-sub :hover,
+.navitem3-sub :hover{
+  color: black;
+}
+
+.titel-home{
+  font-size: 50px;
+  padding-left: 42%;
+  padding-top: 10%;
+}
+
+
+.LLC-gebouw {
+  align-content: center;
+  justify-content: center;
+  padding-left: 35%;
+  width: 30%;
+}
+
+.home-text{
+  padding: 15px;
+  font-size: 35px;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: white;
+  background-color: #3D3C5A; 
+}
+
+footer{
+  display: flex;
+  background-color: #3D3C5A;
+  color: #5265AA;
+  margin-top: auto;
+}
+
+.footeritem2,
+.footeritem1{
+  padding-left: 15px;
+}
+
+.google-maps{
+  text-decoration: none;
+  color: #5265AA;
+}
+
+.titel-table{
+  
+  font-size: 60px;
+}
+
+table, th, td, tr, button{
+  border: 2px solid;
+  background-color: #3d3c5a00;
+  font-size: 40px;
+ 
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
