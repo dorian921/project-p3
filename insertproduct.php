@@ -40,27 +40,47 @@
           </div>
         </nav>
 
-   <form action="" method="post">
+        <div class="titel-table">product toevoegen</div>
 
-    <label for="voornaam">voornaam</label>
-    <input type="text" name="voornaam">
+   <form action="" method="post" >
+
+    <label class="voornaam" for="voornaam">naam
+    <input   type="text" name="naam">
+    </label>
+
+    <label class="achternaam" for="achternaam">merk
+    <input  type="text" name="merk" >
+    </label>
     <br>
 
-    <label for="achternaam">achternaam</label>
-    <input type="text" name="achternaam" >
+    <label class="prijs" for="adres">prijs
+    <input  type="number" name="prijs" >
+    </label>
+
+    
     <br>
+    
 
-    <label for="adres">adres</label>
-    <input type="text" name="adres" >
-    <br>
-
-    <label for="plaats">plaats</label>
-    <input type="text" name="plaats" >
-
+    <label class="submit" for="submit">
+      <input type="submit" name="submit">
+    </label>
 
 
 
    </form>
+   <?php
+   include "function.php";
+   if(isset($_POST["submit"])) {
+    insertproduct($post);
+    
+    header("Location: productcrud.php"); 
+        exit();
+    
+
+
+   }
+
+   ?>
 
 
 

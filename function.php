@@ -74,7 +74,7 @@ function crud(){
   // Menu-item   insert
   $txt = "
  
-  <a href='insert.php'>Toevoegen nieuwe klant</a>
+  <a href='insertklant.php'>Toevoegen nieuwe klant</a>
   ";
   echo $txt;
 
@@ -89,10 +89,37 @@ function crud(){
   
 }
 
+function insertklant($post){
+    // Maak database connectie
+    $conn = connectDatab();
+
+    // Maak een query 
+    $sql = "
+        INSERT INTO " . CRUD_TABLE . " (voornaam, achternaam, adres, plaats )
+        VALUES (:voornaam, :achternaam, :adres, :plaats ) 
+    ";
+
+    // Prepare query
+    $stmt = $conn->prepare($sql);
+    // Uitvoeren
+    $stmt->execute([
+        ':voornaam'=>$_POST['voornaam'],
+        ':achternaam'=>$_POST['achternaam'],
+        ':adres'=>$_POST['adres'],
+        ':plaats'=>$_POST['plaats']
+        
+    ]);
+
+    
+    // test of database actie is gelukt
+    $retVal = ($stmt->rowCount() == 1) ? true : false ;
+    return $retVal;  
+}
+
 function crud2(){
     $txt = "
  
-  <a href='insert2.php'>Toevoegen nieuw product</a>
+  <a href='insertproduct.php'>Toevoegen nieuw product</a>
   ";
   echo $txt;
 
@@ -110,6 +137,33 @@ function crud2(){
   printCrudproducten($result2);
   
   
+}
+
+function insertproduct($post){
+    // Maak database connectie
+    $conn = connectDatab();
+
+    // Maak een query 
+    $sql = "
+        INSERT INTO " . CRUD_TABLE2 . " (naam, merk, prijs  )
+        VALUES (:naam, :merk, :prijs  ) 
+    ";
+
+    // Prepare query
+    $stmt = $conn->prepare($sql);
+    // Uitvoeren
+    $stmt->execute([
+        ':naam'=>$_POST['naam'],
+        ':merk'=>$_POST['merk'],
+        ':prijs'=>$_POST['prijs']
+        
+        
+    ]);
+
+    
+    // test of database actie is gelukt
+    $retVal = ($stmt->rowCount() == 1) ? true : false ;
+    return $retVal;  
 }
 
 function crud3(){
@@ -149,13 +203,13 @@ function printCrudklant($result){
       
       // Wijzig knopje
       $table .= "<td>
-          <form method='post' action='update_brouwer.php?klantid=$row[klantid]' >       
+          <form class='wzg-btn' method='post' action='update_brouwer.php?klantid=$row[klantid]' >       
               <button>Wijzig</button>	 
           </form></td>";
 
       // Delete knopje
       $table .= "<td>
-          <form method='post' action='delete_brouwer.php?klantid=$row[klantid]' >       
+          <form class='del-btn' method='post' action='delete_brouwer.php?klantid=$row[klantid]' >       
               <button>Verwijder</button>	 
           </form></td>";
 
@@ -193,13 +247,13 @@ function printCrudproducten($result2){
       
       // Wijzig knopje
       $table .= "<td>
-          <form method='post' action='update_brouwer.php?productid=$row[productid]' >       
+          <form class='wzg-btn' method='post' action='updateproduct.php?productid=$row[productid]' >       
               <button>Wijzig</button>	 
           </form></td>";
 
       // Delete knopje
       $table .= "<td>
-          <form method='post' action='delete_brouwer.php?productid=$row[productid]' >       
+          <form class='del-btn' method='post' action='deleteproduct.php?productid=$row[productid]' >       
               <button>Verwijder</button>	 
           </form></td>";
 
@@ -237,13 +291,13 @@ function printCrudbestellingen($result3){
       
       // Wijzig knopje
       $table .= "<td>
-          <form method='post' action='update.php?productid=$row[productid]' >       
+          <form class='wzg-btn' method='post' action='updatebestelling.php?productid=$row[productid]' >       
               <button>Wijzig</button>	 
           </form></td>";
 
       // Delete knopje
       $table .= "<td>
-          <form method='post' action='delete.php?productid=$row[productid]' >       
+          <form class='del-btn' method='post' action='delete.php?productid=$row[productid]' >       
               <button>Verwijder</button>	 
           </form></td>";
 

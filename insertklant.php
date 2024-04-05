@@ -7,7 +7,7 @@
   <link href="homes.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> 
 </head>
 <body>
-      <nav>
+<nav>
         <div class="navimg">
         <a href="homes.php"><img src="img/LLC.png" alt="llc"></a>
             </div>
@@ -31,38 +31,62 @@
                         <div class="navitem3">   
                       <a href="#">over ons</a>
                     <div class="navitem3-sub">
-                  <a href="levering.php">levering</a>
-                  <a href="mil.php">milieu </a>
-                  <a href="levering.php"> team</a>
+                  <a href="">levering</a>
+                  <a href="">milieu </a>
+                  <a href=""> team</a>
                 </div>
               </div>
             </div>
           </div>
         </nav>
 
-    <div class="titel-table">crud tabel</div>
-  
-  
+        <div class="titel-table">klant toevoegen</div>
 
-  <div class="table">
-    <?php 
-    //functie: tabel weergeven
-    include "function.php";
-    connectDatab();
-    crud2();
+   <form action="" method="post" >
+
+    <label class="voornaam" for="voornaam">voornaam
+    <input   type="text" name="voornaam">
+    </label>
+
+    <label class="achternaam" for="achternaam">achternaam
+    <input  type="text" name="achternaam" >
+    </label>
+    <br>
+
+    <label class="adres" for="adres">adres
+    <input  type="text" name="adres" >
+    </label>
+
+    <label class="plaats" for="plaats">plaats
+    <input  type="text" name="plaats" >
+    </label>
+    <br>
     
-    
+
+    <label class="submit" for="submit">
+      <input type="submit" name="submit">
+    </label>
 
 
 
+   </form>
+   <?php
+   include "function.php";
+   if(isset($_POST["submit"])) {
+    insertklant($post);
     
+    header("Location: klant.php"); 
+        exit();
     
-    
-    
-    
-    ?>
-      
-  </div>
+
+
+   }
+
+   ?>
+
+
+
+
     
   
   

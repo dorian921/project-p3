@@ -135,10 +135,45 @@ a {
 }
 
 form{
+  padding-top: 60px;
+  font-size: 30px; 
+}
+
+.voornaam{
+  margin-bottom: 20px;
+  padding-left: 20px;
+
+
+}
+.achternaam{
+ margin-bottom: 20px;
+
+ 
+}
+
+.adres{
   
-  padding-left: 45%;
-  font-size: 30px;
+  margin-left: 75px;
+}
+
+.plaats{
+  margin-left: 70px;
+  margin-bottom: 20px;
+}
+
+.submit{
+  padding-left: 6%;
   
 }
 
+.del-btn{
+  padding: 0;
+}
 
+.wzg-btn{
+  padding: 0;
+}
+
+.prijs{
+  padding-left: 30px;
+}
