@@ -9,8 +9,8 @@
 </head>
 <body>
       <nav>
-        <div class="navimg">
-          <img src="LLC.png" alt="LLC">
+      <div class="navimg">
+        <a href="homes.php"><img src="img/LLC.png" alt="llc"></a>
             </div>
                 <div class="nav-cont">
                   <div class="navitem1">
@@ -22,18 +22,19 @@
                           </div>
                             </div>
                               <div class="navitem2">
-                                <a href="#">producten</a>
+                                <a href="product.php">producten</a>
                               <div class="navitem2-sub">
-                                <a href="">crud</a>
-                                <a href=""></a>
+                                <a href="klant.php">klantcrud</a>
+                                <a href="productcrud.php">productcrud</a>
+                                <a href="bestelling.php">bestelcrud</a>
                             </div>
                           </div>
                         <div class="navitem3">   
                       <a href="#">over ons</a>
                     <div class="navitem3-sub">
-                  <a href="">levering</a>
-                  <a href="">milieu </a>
-                  <a href=""> team</a>
+                    <a href="levering.php">levering</a>
+                  <a href="mil.php">milieu </a>
+                  <a href="team.php"> team</a>
                 </div>
               </div>
             </div>

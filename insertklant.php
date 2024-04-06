@@ -31,9 +31,9 @@
                         <div class="navitem3">   
                       <a href="#">over ons</a>
                     <div class="navitem3-sub">
-                  <a href="">levering</a>
-                  <a href="">milieu </a>
-                  <a href=""> team</a>
+                    <a href="levering.php">levering</a>
+                  <a href="mil.php">milieu </a>
+                  <a href="levering.php"> team</a>
                 </div>
               </div>
             </div>

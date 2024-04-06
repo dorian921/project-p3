@@ -7,16 +7,16 @@
   <link href="homes.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> 
 </head>
 <body>
-      <nav>
-        <div class="navimg">
+<nav>
+      <div class="navimg">
         <a href="homes.php"><img src="img/LLC.png" alt="llc"></a>
             </div>
                 <div class="nav-cont">
                   <div class="navitem1">
                     <a href="#">formulieren</a>
                       <div class="navitem1-sub">
-                          <a href="">klachten</a>
-                          <a href="">compliment</a>
+                          <a href="klacht.php">klachten</a>
+                          <a href="comp.php">compliment</a>
                           <a href="">info</a>
                           </div>
                             </div>
@@ -31,9 +31,9 @@
                         <div class="navitem3">   
                       <a href="#">over ons</a>
                     <div class="navitem3-sub">
-                  <a href="levering.php">levering</a>
+                    <a href="levering.php">levering</a>
                   <a href="mil.php">milieu </a>
-                  <a href="levering.php"> team</a>
+                  <a href="team.php"> team</a>
                 </div>
               </div>
             </div>

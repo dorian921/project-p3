@@ -89,6 +89,32 @@ function crud(){
   
 }
 
+function deleteklant($id){
+
+    // Connect database
+    $conn = connectDatab();
+    
+    // Maak een query 
+    $sql = "
+    DELETE FROM " . CRUD_TABLE . 
+    " WHERE klantid = :klantid";
+    "DELETE FROM " . CRUD_TABLE3 . 
+    " WHERE klantid = :klantid"
+    ;
+
+    // Prepare query
+    $stmt = $conn->prepare($sql);
+
+    // Uitvoeren
+    $stmt->execute([
+    ':klantid'=>$_GET['klantid' ]
+    ]);
+
+    // test of database actie is gelukt
+    $retVal = ($stmt->rowCount() == 1) ? true : false ;
+    return $retVal;
+}
+
 function insertklant($post){
     // Maak database connectie
     $conn = connectDatab();
@@ -203,13 +229,13 @@ function printCrudklant($result){
       
       // Wijzig knopje
       $table .= "<td>
-          <form class='wzg-btn' method='post' action='update_brouwer.php?klantid=$row[klantid]' >       
+          <form class='wzg-btn' method='post' action='updateklant.php?klantid=$row[klantid]' >       
               <button>Wijzig</button>	 
           </form></td>";
 
       // Delete knopje
       $table .= "<td>
-          <form class='del-btn' method='post' action='delete_brouwer.php?klantid=$row[klantid]' >       
+          <form class='del-btn' method='post' action='deleteklant.php?klantid=$row[klantid]' >       
               <button>Verwijder</button>	 
           </form></td>";
 
@@ -247,7 +273,7 @@ function printCrudproducten($result2){
       
       // Wijzig knopje
       $table .= "<td>
-          <form class='wzg-btn' method='post' action='updateproduct.php?productid=$row[productid]' >       
+          <form class='wzg-btn' method='post' action='updateproducten.php?productid=$row[productid]' >       
               <button>Wijzig</button>	 
           </form></td>";
 
@@ -297,7 +323,7 @@ function printCrudbestellingen($result3){
 
       // Delete knopje
       $table .= "<td>
-          <form class='del-btn' method='post' action='delete.php?productid=$row[productid]' >       
+          <form class='del-btn' method='post' action='deletebestelling.php?productid=$row[productid]' >       
               <button>Verwijder</button>	 
           </form></td>";
 
