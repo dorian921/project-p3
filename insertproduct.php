@@ -45,16 +45,16 @@
    <form action="" method="post" >
 
     <label class="voornaam" for="voornaam">naam
-    <input   type="text" name="naam">
+    <input required  type="text" name="naam">
     </label>
 
     <label class="achternaam" for="achternaam">merk
-    <input  type="text" name="merk" >
+    <input required type="text" name="merk" >
     </label>
     <br>
 
     <label class="prijs" for="adres">prijs
-    <input  type="number" name="prijs" >
+    <input required type="number" name="prijs" >
     </label>
 
     
@@ -62,7 +62,7 @@
     
 
     <label class="submit" for="submit">
-      <input type="submit" name="submit">
+      <input required type="submit" name="submit">
     </label>
 
 

@@ -98,8 +98,7 @@ function deleteklant($id){
     $sql = "
     DELETE FROM " . CRUD_TABLE . 
     " WHERE klantid = :klantid";
-    "DELETE FROM " . CRUD_TABLE3 . 
-    " WHERE klantid = :klantid"
+    
     ;
 
     // Prepare query
@@ -108,6 +107,37 @@ function deleteklant($id){
     // Uitvoeren
     $stmt->execute([
     ':klantid'=>$_GET['klantid' ]
+    ]);
+
+    // test of database actie is gelukt
+    $retVal = ($stmt->rowCount() == 1) ? true : false ;
+    return $retVal;
+}
+
+function wijzigklant($row){
+
+    // Maak database connectie
+    $conn = connectDb();
+
+    // Maak een query 
+    $sql = "UPDATE " . CRUD_TABLE .
+    " SET 
+        voornaam = :voornaam, 
+        achternaam = :achternaam, 
+        adres = :adres, 
+        plaats = :plaats
+    WHERE klantid = :klantid
+    ";
+
+    // Prepare query
+    $stmt = $conn->prepare($sql);
+    // Uitvoeren
+    $stmt->execute([
+        ':voornaam'=>$row['voornaam'],
+        ':achternaam'=>$row['achternaam'],
+        ':adres'=>$row['adres'],
+        ':plaats'=>$row['plaats'],
+        ':klantid'=>$row['klantid']
     ]);
 
     // test of database actie is gelukt
@@ -163,6 +193,30 @@ function crud2(){
   printCrudproducten($result2);
   
   
+}
+function deleteproduct($id){
+
+    // Connect database
+    $conn = connectDatab();
+    
+    // Maak een query 
+    $sql = "
+    DELETE FROM " . CRUD_TABLE2 . 
+    " WHERE productid = :productid";
+    
+    ;
+
+    // Prepare query
+    $stmt = $conn->prepare($sql);
+
+    // Uitvoeren
+    $stmt->execute([
+    ':productid'=>$_GET['productid' ]
+    ]);
+
+    // test of database actie is gelukt
+    $retVal = ($stmt->rowCount() == 1) ? true : false ;
+    return $retVal;
 }
 
 function insertproduct($post){
@@ -273,7 +327,7 @@ function printCrudproducten($result2){
       
       // Wijzig knopje
       $table .= "<td>
-          <form class='wzg-btn' method='post' action='updateproducten.php?productid=$row[productid]' >       
+          <form class='wzg-btn' method='post' action='updateproduct.php?productid=$row[productid]' >       
               <button>Wijzig</button>	 
           </form></td>";
 
@@ -302,9 +356,7 @@ function printCrudbestellingen($result3){
   foreach($headers as $header){
       $table .= "<th>" . $header . "</th>";   
   }
-  // Voeg actie kopregel toe
-  $table .= "<th colspan=2>Actie</th>";
-  $table .= "</th>";
+ 
 
   // print elke rij
   foreach ($result3 as $row) {
@@ -315,17 +367,7 @@ function printCrudbestellingen($result3){
           $table .= "<td>" . $cell . "</td>";  
       }
       
-      // Wijzig knopje
-      $table .= "<td>
-          <form class='wzg-btn' method='post' action='updatebestelling.php?productid=$row[productid]' >       
-              <button>Wijzig</button>	 
-          </form></td>";
-
-      // Delete knopje
-      $table .= "<td>
-          <form class='del-btn' method='post' action='deletebestelling.php?productid=$row[productid]' >       
-              <button>Verwijder</button>	 
-          </form></td>";
+     
 
       $table .= "</tr>";
   }

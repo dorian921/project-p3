@@ -39,7 +39,7 @@
             </div>
           </div>
         </nav>
-    <div class="titel-table">crud tabel</div>
+    <div class="titel-table">crud tabel klanten</div>
   
   
 

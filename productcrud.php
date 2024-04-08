@@ -40,7 +40,7 @@
           </div>
         </nav>
 
-    <div class="titel-table">crud tabel</div>
+    <div class="titel-table">crud tabel producten</div>
   
   
 
