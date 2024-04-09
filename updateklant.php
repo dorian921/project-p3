@@ -8,15 +8,15 @@
 </head>
 <body>
 <nav>
-      <div class="navimg">
+        <div class="navimg">
         <a href="homes.php"><img src="img/LLC.png" alt="llc"></a>
             </div>
                 <div class="nav-cont">
                   <div class="navitem1">
                     <a href="#">formulieren</a>
                       <div class="navitem1-sub">
-                          <a href="klacht.php">klachten</a>
-                          <a href="comp.php">compliment</a>
+                          <a href="">klachten</a>
+                          <a href="">compliment</a>
                           <a href="">info</a>
                           </div>
                             </div>
@@ -33,35 +33,60 @@
                     <div class="navitem3-sub">
                     <a href="levering.php">levering</a>
                   <a href="mil.php">milieu </a>
-                  <a href="team.php"> team</a>
+                  <a href="levering.php"> team</a>
                 </div>
               </div>
             </div>
           </div>
         </nav>
 
-    <div class="titel-home">ons bedrijf llc</div>
-  
-  <img class="LLC-gebouw" src="img/gebouw-llc.png" alt="llc">
+        <div class="titel-table">klant wijzigen</div>
 
-  <div class="home-text">
-      Bent u op zoek naar een geavanceerde oplossing om uw zakelijke of persoonlijke behoeften te verbeteren? 
-      Zoek niet verder dan onze ultramoderne laserlampen en pennencollectie! Onze producten van topkwaliteit zijn ontworpen om u precisie, 
-      efficiëntie en stijl te bieden. Of u nu een professionele kunstenaar, 
-      een hobbyist of gewoon iemand bent die de kracht van lasers waardeert, 
-      onze laserlampen en pennen tillen uw werk naar een hoger niveau.
-      Onze laserlampen hebben een strak ontwerp en intuïtieve bediening, 
-      waardoor u eenvoudig ingewikkelde ontwerpen en patronen kunt creëren. 
-      De instelbare focusfunctie zorgt ervoor dat u het perfecte detailniveau kunt bereiken, 
-      of u nu aan een klein project of aan een volledige muurschildering werkt. 
-      En met een verscheidenheid aan kleuren om uit te kiezen, kunt u een vleugje persoonlijkheid toevoegen aan elk oppervlak.
-      Onze laserpennen zijn daarentegen perfect voor degenen die waarde hechten aan draagbaarheid en discretie. 
-      Dankzij het compacte ontwerp kun je ze gemakkelijk overal mee naartoe nemen, en dankzij de krachtige laserstraal kun je op vrijwel elk oppervlak prachtige ontwerpen maken.
-      Bovendien kunt u, dankzij de vele beschikbare kleuren en patronen, uw pen aanpassen aan uw persoonlijke stijl.
-      Dus waarom wachten? Investeer vandaag nog in uzelf en uw creativiteit door onze eersteklas laserlamp of pen aan te schaffen. 
-      U zult niet alleen versteld staan van de resultaten, maar u ondersteunt ook een bedrijf dat zich toelegt op het leveren van producten van de hoogste kwaliteit en een uitzonderlijke klantenservice. 
-      Shop nu en ervaar zelf de kracht van lasers!
-  </div>
+   <form action="" method="post" >
+
+    <label class="voornaam" for="voornaam">voornaam
+    <input   type="text" name="voornaam">
+    </label>
+
+    <label class="achternaam" for="achternaam">achternaam
+    <input required type="text" name="achternaam" >
+    </label>
+    <br>
+
+    <label class="adres" for="adres">adres
+    <input required  type="text" name="adres" >
+    </label>
+
+    <label class="plaats" for="plaats">plaats
+    <input required  type="text" name="plaats" >
+    </label>
+    <br>
+    
+
+    <label class="submit" for="submit">
+      <input type="submit" name="submit">
+    </label>
+
+
+
+   </form>
+   <?php
+   include "function.php";
+   if(isset($_POST["submit"])) {
+    wijzigklant($post);
+    
+    header("Location: klant.php"); 
+        exit();
+    
+
+
+   }
+
+   ?>
+
+
+
+
     
   
   

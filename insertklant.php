@@ -31,9 +31,9 @@
                         <div class="navitem3">   
                       <a href="#">over ons</a>
                     <div class="navitem3-sub">
-                  <a href="">levering</a>
-                  <a href="">milieu </a>
-                  <a href=""> team</a>
+                    <a href="levering.php">levering</a>
+                  <a href="mil.php">milieu </a>
+                  <a href="levering.php"> team</a>
                 </div>
               </div>
             </div>
@@ -45,26 +45,26 @@
    <form action="" method="post" >
 
     <label class="voornaam" for="voornaam">voornaam
-    <input   type="text" name="voornaam">
+    <input required  type="text" name="voornaam">
     </label>
 
     <label class="achternaam" for="achternaam">achternaam
-    <input  type="text" name="achternaam" >
+    <input required  type="text" name="achternaam" >
     </label>
     <br>
 
     <label class="adres" for="adres">adres
-    <input  type="text" name="adres" >
+    <input required  type="text" name="adres" >
     </label>
 
     <label class="plaats" for="plaats">plaats
-    <input  type="text" name="plaats" >
+    <input required  type="text" name="plaats" >
     </label>
     <br>
     
 
     <label class="submit" for="submit">
-      <input type="submit" name="submit">
+      <input required type="submit" name="submit">
     </label>
 
 

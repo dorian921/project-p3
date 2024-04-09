@@ -1,0 +1,47 @@
+.dorian{
+   
+    width: 20%; 
+    margin-left: 10%;
+    text-align: center;
+    margin-top: 10%px;
+    margin-bottom: 15px;
+    color: white;
+    background-color: #3D3C5A;
+    
+}
+.clas2{
+    width: 20%; 
+    margin-left: 10%;
+    text-align: center;
+    margin-top: 10%px;
+    margin-bottom: 15px;
+    color: white;
+    background-color: #3D3C5A;
+}
+.clas{
+    width: 20%; 
+    margin-left: 10%;
+    text-align: center;
+    margin-top: 10%px;
+    margin-bottom: 15px;
+    color: white;
+    background-color: #3D3C5A;
+}
+
+#fototeam{
+    height: 100px;
+    width: 100px;
+}
+
+.titel-homes{
+    font-size: 50px;
+  padding-left: 42%;
+  padding-top: 5%;
+}
+
+.nav2{
+    background-color: #5265AA;
+    display: flex;
+    z-index: 0;
+   
+}

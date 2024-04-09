@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="homes.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> 
-  <link href="mil.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> 
+  <link href="comp.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> 
 </head>
 <body>
 <nav>
@@ -41,13 +41,10 @@
           </div>
         </nav>
 
-    <div class="mil">milieu
+    <div class="titel-home">compliment
    </div>
-   <div class="home-text">
-    <p>LLC is vastbesloten om het milieu te beschermen en duurzaamheid te bevorderen in al haar activiteiten. We begrijpen onze verantwoordelijkheid om de impact op het milieu te verminderen en nemen maatregelen zoals het gebruik van groene energie,
-       het verminderen van afval en het bevorderen van recycling.
-       We werken samen met leveranciers die milieuvriendelijke praktijken omarmen en ondersteunen initiatieven voor natuurbescherming in lokale gemeenschappen. Ons doel is om een positieve bijdrage te leveren aan het milieu en een duurzamere toekomst te bevorderen. </p>
-  </div>
+    <input class="text-balkje" type="text" placeholder="antwoorden">
+    <input class="verzend-knop" type="submit" name="verzenden">
 
 
 
@@ -94,3 +91,8 @@
   
 </body>
 </html>
+<?php
+
+
+
+?>

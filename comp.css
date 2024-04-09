@@ -1,0 +1,17 @@
+.text-balkje{
+    display: flexbox;
+   margin-left: 27%;
+   margin-top: 15px;
+    width: 50%;
+    height: 50px;  
+  
+  }
+  .verzend-knop{
+    display: flexbox;
+    margin-left: 45%;
+    margin-top: 20px;
+    width: 10%;
+  
+      
+  
+  }

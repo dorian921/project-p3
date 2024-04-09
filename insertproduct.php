@@ -8,15 +8,15 @@
 </head>
 <body>
 <nav>
-        <div class="navimg">
+      <div class="navimg">
         <a href="homes.php"><img src="img/LLC.png" alt="llc"></a>
             </div>
                 <div class="nav-cont">
                   <div class="navitem1">
                     <a href="#">formulieren</a>
                       <div class="navitem1-sub">
-                          <a href="">klachten</a>
-                          <a href="">compliment</a>
+                          <a href="klacht.php">klachten</a>
+                          <a href="comp.php">compliment</a>
                           <a href="">info</a>
                           </div>
                             </div>
@@ -31,9 +31,9 @@
                         <div class="navitem3">   
                       <a href="#">over ons</a>
                     <div class="navitem3-sub">
-                  <a href="">levering</a>
-                  <a href="">milieu </a>
-                  <a href=""> team</a>
+                    <a href="levering.php">levering</a>
+                  <a href="mil.php">milieu </a>
+                  <a href="team.php"> team</a>
                 </div>
               </div>
             </div>
@@ -45,16 +45,16 @@
    <form action="" method="post" >
 
     <label class="voornaam" for="voornaam">naam
-    <input   type="text" name="naam">
+    <input required  type="text" name="naam">
     </label>
 
     <label class="achternaam" for="achternaam">merk
-    <input  type="text" name="merk" >
+    <input required type="text" name="merk" >
     </label>
     <br>
 
     <label class="prijs" for="adres">prijs
-    <input  type="number" name="prijs" >
+    <input required type="number" name="prijs" >
     </label>
 
     
@@ -62,7 +62,7 @@
     
 
     <label class="submit" for="submit">
-      <input type="submit" name="submit">
+      <input required type="submit" name="submit">
     </label>
 
 

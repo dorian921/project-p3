@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="homes.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> 
-  <link href="mil.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> 
+  <link href="team.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> 
 </head>
 <body>
 <nav>
@@ -41,15 +41,49 @@
           </div>
         </nav>
 
-    <div class="mil">milieu
+    <div class="titel-homes">het LLC team
    </div>
-   <div class="home-text">
-    <p>LLC is vastbesloten om het milieu te beschermen en duurzaamheid te bevorderen in al haar activiteiten. We begrijpen onze verantwoordelijkheid om de impact op het milieu te verminderen en nemen maatregelen zoals het gebruik van groene energie,
-       het verminderen van afval en het bevorderen van recycling.
-       We werken samen met leveranciers die milieuvriendelijke praktijken omarmen en ondersteunen initiatieven voor natuurbescherming in lokale gemeenschappen. Ons doel is om een positieve bijdrage te leveren aan het milieu en een duurzamere toekomst te bevorderen. </p>
+   <nav class="nav2" >
+   <div class="dorian">
+    <H1>henry</H1>
+    <h2>levering</h2>
+    <p>regelt al onze leveringen</p>
+    <img id="fototeam" src="henry.jpg" alt="dorian" >
   </div>
+  <div class="clas2">
+    <H1>jens</H1>
+    <h2>database onderhoud</h2>
+    <p>zorgt ervoor dat er niks fout gaat</p>
+    <img id="fototeam" src="jens.jpg" alt="dorian" >
+  </div>
+  <div class="clas">
+    <H1>ernard</H1>
+    <h2>verkoop</h2>
+    <p>zorgt voor de verkoop</p>
+    <img id="fototeam" src="ernard.jpg" alt="dorian" >
+  </div>
+    </nav>
 
-
+    <nav class="nav2">
+   <div class="dorian">
+    <H1>anouk</H1>
+    <h2>verkoop</h2>
+    <p>iemand die hard doorwerkt   </p>
+    <img id="fototeam" src="anouk.jpg" alt="dorian" >
+  </div>
+  <div class="clas2">
+    <H1>sasia</H1>
+    <h2>website design</h2>
+    <p>is een goede designer</p>
+    <img id="fototeam" src="sasia.jpg" alt="dorian" >
+  </div>
+  <div class="clas">
+    <H1>bert</H1>
+    <h2>schoonmaker</h2>
+    <p>zorgt voor een goede werkplek</p>
+    <img id="fototeam" src="bery.jpg" alt="dorian" >
+  </div>
+    </nav>
 
 
  
