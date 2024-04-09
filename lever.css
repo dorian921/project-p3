@@ -1,0 +1,7 @@
+.lever-div{
+    display: flex;
+    height: 698px;
+    font-size: large;
+    flex-direction: column;
+    justify-content: center;
+}
