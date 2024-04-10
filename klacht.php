@@ -43,9 +43,13 @@
 
     <div class="titel-home">klachten
    </div>
+   <form action="" method="post">
     <input class="text-balkje" type="text" placeholder="antwoorden">
     <input class="verzend-knop" type="submit" name="verzenden">
+</form>
+<?php
 
+?>
 
 
 

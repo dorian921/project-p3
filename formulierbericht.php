@@ -1,23 +1,3 @@
-
-   <?php
-
-   include "function.php";
-   
-   
-   
-   if(isset($_POST["submit"])) {
-    wijzigklant($row);
-    
-    header("Location: klant.php"); 
-    exit();
-    
-
-
-   }
-
-   
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="homes.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" /> 
+  
 </head>
 <body>
 <nav>
-        <div class="navimg">
+      <div class="navimg">
         <a href="homes.php"><img src="img/LLC.png" alt="llc"></a>
             </div>
                 <div class="nav-cont">
                   <div class="navitem1">
                     <a href="#">formulieren</a>
                       <div class="navitem1-sub">
-                          <a href="">klachten</a>
-                          <a href="">compliment</a>
+                          <a href="klacht.php">klachten</a>
+                          <a href="comp.php">compliment</a>
                           <a href="">info</a>
                           </div>
                             </div>
@@ -53,52 +34,33 @@
                     <div class="navitem3-sub">
                     <a href="levering.php">levering</a>
                   <a href="mil.php">milieu </a>
-                  <a href="levering.php"> team</a>
+                  <a href="team.php"> team</a>
                 </div>
               </div>
             </div>
           </div>
         </nav>
 
-        <div class="titel-table">klant wijzigen</div>
+    <div class="titel-home">berichten</div>
 
-   <form action="" method="post" >
 
-    <label class="voornaam" for="voornaam">voornaam
-    <input   type="text" name="voornaam" <?php   echo $row['voornaam']   ?> >
-    </label>
 
-    <label class="achternaam" for="achternaam">achternaam
-    <input required type="text" name="achternaam" >
-    </label>
-    <br>
 
-    <label class="adres" for="adres">adres
-    <input required  type="text" name="adres" >
-    </label>
+      <?php
+      include "function.php";
+      crud4()
 
-    <label class="plaats" for="plaats">plaats
-    <input required  type="text" name="plaats" >
-    </label>
-    <br>
-    
-
-    <label class="submit" for="submit">
-      <input type="submit" name="submit">
-    </label>
- </form>
-
+      ?>
   
 
 
 
 
-    
+ 
   
-  
-  
-  
-  
+
+
+
   <footer>
     <div class="footeritem1">
       <p>
@@ -128,6 +90,11 @@
     </p>
     </div>
   </footer>
- 
+
+  
+
+
+  
+  
 </body>
 </html>

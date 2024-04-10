@@ -43,12 +43,27 @@
 
     <div class="titel-home">compliment
    </div>
-    <input class="text-balkje" type="text" placeholder="antwoorden">
-    <input class="verzend-knop" type="submit" name="verzenden">
+   <form action="" method="post">
+   <input class="voornaam" type="text" name="voornaam" placeholder="voornaam">
+   <input class="leeftijd" type="text" name="leeftijd" placeholder="leeftijd">
+   <input class="geslacht" type="text" name="geslacht" placeholder="geslacht">
+   <input class="text-balkje" type="text" name="bericht" placeholder="antwoorden">
+   <input class="verzend-knop" type="submit" name="verzenden">
+</form>
 
 
+<?php
+  include "function.php";  
+  $post = []; 
+  if(isset($_POST['verzenden'])){
+    insertbericht($post);
 
+    header("location: formulierbericht.php");
+        exit();
 
+  }
+
+?>
  
   
 
@@ -90,9 +105,8 @@
   
   
 </body>
+
+
 </html>
-<?php
 
-
-
-?>
+ 

@@ -48,19 +48,19 @@
     <H1>henry</H1>
     <h2>levering</h2>
     <p>regelt al onze leveringen</p>
-    <img id="fototeam" src="henry.jpg" alt="dorian" >
+    <img id="fototeam" src="team foto's/henry.jpg" alt="dorian" >
   </div>
   <div class="clas2">
     <H1>jens</H1>
     <h2>database onderhoud</h2>
     <p>zorgt ervoor dat er niks fout gaat</p>
-    <img id="fototeam" src="jens.jpg" alt="dorian" >
+    <img id="fototeam" src="team foto's/jens.jpg" alt="dorian" >
   </div>
   <div class="clas">
     <H1>ernard</H1>
     <h2>verkoop</h2>
     <p>zorgt voor de verkoop</p>
-    <img id="fototeam" src="ernard.jpg" alt="dorian" >
+    <img id="fototeam" src="team foto's/ernard.jpg" alt="dorian" >
   </div>
     </nav>
 
@@ -69,19 +69,19 @@
     <H1>anouk</H1>
     <h2>verkoop</h2>
     <p>iemand die hard doorwerkt   </p>
-    <img id="fototeam" src="anouk.jpg" alt="dorian" >
+    <img id="fototeam" src="team foto's/anouk.jpg" alt="dorian" >
   </div>
   <div class="clas2">
     <H1>sasia</H1>
     <h2>website design</h2>
     <p>is een goede designer</p>
-    <img id="fototeam" src="sasia.jpg" alt="dorian" >
+    <img id="fototeam" src="team foto's/sasia.jpg" alt="dorian" >
   </div>
   <div class="clas">
     <H1>bert</H1>
     <h2>schoonmaker</h2>
     <p>zorgt voor een goede werkplek</p>
-    <img id="fototeam" src="bery.jpg" alt="dorian" >
+    <img id="fototeam" src="team foto's/bery.jpg" alt="dorian" >
   </div>
     </nav>
 

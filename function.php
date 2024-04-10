@@ -117,15 +117,16 @@ function deleteklant($id){
 function wijzigklant($row){
 
     // Maak database connectie
-    $conn = connectDb();
+    $conn = connectDatab();
 
     // Maak een query 
     $sql = "UPDATE " . CRUD_TABLE .
-    " SET 
+    "SET 
         voornaam = :voornaam, 
         achternaam = :achternaam, 
         adres = :adres, 
         plaats = :plaats
+
     WHERE klantid = :klantid
     ";
 
@@ -133,11 +134,12 @@ function wijzigklant($row){
     $stmt = $conn->prepare($sql);
     // Uitvoeren
     $stmt->execute([
-        ':voornaam'=>$row['voornaam'],
+        ':voornaam'=> $row['voornaam'],
         ':achternaam'=>$row['achternaam'],
         ':adres'=>$row['adres'],
         ':plaats'=>$row['plaats'],
-        ':klantid'=>$row['klantid']
+        
+        
     ]);
 
     // test of database actie is gelukt
@@ -376,6 +378,75 @@ function printCrudbestellingen($result3){
   echo $table;
 }
 
+function crud4(){
+    // Haal alle  record uit de tabel 
+    $result4 = getData(CRUD_TABLE4);
+              
+  
+    //print table
+    printCrudbericht($result4);
+    
+  }
+
+function printCrudbericht($result4) {
+    // Zet de hele table in een variable en print hem 1 keer 
+  $table = "<table>";
+
+  // Print header table
+
+  // haal de kolommen uit de eerste rij [0] van het array $result mbv array_keys
+  $headers = array_keys($result4[0]);
+  $table .= "<tr>";
+  foreach($headers as $header){
+      $table .= "<th>" . $header . "</th>";   
+  }
+ 
+
+  // print elke rij
+  foreach ($result4 as $row) {
+      
+      $table .= "<tr>";
+      // print elke kolom
+      foreach ($row as $cell) {
+          $table .= "<td>" . $cell . "</td>";  
+      }
+      
+     
+
+      $table .= "</tr>";
+  }
+  $table.= "</table>";
+
+  echo $table;
+}
+
+function insertbericht($post){
+    // Maak database connectie
+    $conn = connectDatab();
+
+    // Maak een query 
+    $sql = "
+        INSERT INTO " . CRUD_TABLE4 . " (voornaam, leeftijd, geslacht, bericht  )
+        VALUES (:voornaam, :leeftijd, :geslacht, :bericht  ) 
+    ";
+
+    // Prepare query
+    $stmt = $conn->prepare($sql);
+    // Uitvoeren
+    $stmt->execute([
+        ':voornaam'=>$_POST['voornaam'],
+        ':leeftijd'=>$_POST['leeftijd'],
+        ':geslacht'=>$_POST['geslacht'],
+        ':bericht'=>$_POST['bericht']
+        
+        
+    ]);
+
+    
+    // test of database actie is gelukt
+    $retVal = ($stmt->rowCount() == 1) ? true : false ;
+    return $retVal;  
+}
 
 
 
