@@ -50,6 +50,17 @@ function getKlant($klantid){
     return $result;
  }
 
+ function getproduct($productid){
+
+    $conn = connectDatab();
+    $sql = "SELECT * FROM " . CRUD_TABLE2 . " WHERE productid = :productid";
+    $query = $conn->prepare($sql);
+    $query->execute([':productid'=>$productid]);
+    $result = $query->fetch();
+
+    return $result;
+ }
+
 
 
 
@@ -196,6 +207,30 @@ function crud2(){
   printCrudproducten($result2);
   
   
+}
+
+function updateproduct($row){
+
+    $conn = connectDatab();
+    $sql = "UPDATE " . CRUD_TABLE2 .
+    " SET 
+    naam = :naam, 
+    merk = :merk, 
+    prijs = :prijs
+    
+    WHERE productid = :productid
+";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([
+        ':naam'=>$row['naam'],
+        ':merk'=>$row['merk'],
+        ':prijs'=>$row['prijs'],
+        ':productid'=>$row['productid'] 
+    ]);
+
+    $retVal = ($stmt->rowCount() == 1) ? true : false ;
+    return $retVal;
 }
 function deleteproduct($id){
 

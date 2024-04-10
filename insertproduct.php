@@ -54,7 +54,7 @@
     <br>
 
     <label class="prijs" for="adres">prijs
-    <input required type="number" name="prijs" >
+    <input required type="text" name="prijs" >
     </label>
 
     

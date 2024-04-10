@@ -7,8 +7,8 @@ require_once('function.php');
  
  if(isset($_POST['submit'])) {
   
-  if(updateKlant($_POST) == true){
-header("Location: klant.php"); 
+  if(updateproduct($_POST) == true){
+header("Location: productcrud.php"); 
 exit();
 } 
 
@@ -16,9 +16,9 @@ exit();
 
  }
 
- if(isset($_GET['klantid'])){  
-  $klantid = $_GET['klantid'];
-  $row = getKlant($klantid);
+ if(isset($_GET['productid'])){  
+  $productid = $_GET['productid'];
+  $row = getproduct($productid);
  
 ?>
 
@@ -68,23 +68,19 @@ exit();
 
    <form action="" method="post" >
 
-   <input type="hidden" id="naam" name="klantid" required value="<?php echo $row['klantid']; ?>"><br>
+   <input type="hidden" id="naam" name="productid" required value="<?php echo $row['productid']; ?>"><br>
 
     <label class="voornaam" for="voornaam">voornaam
-    <input type="text" name="voornaam" required value="<?php echo $row['voornaam']; ?>" >
+    <input type="text" name="naam" required value="<?php echo $row['naam']; ?>" >
     </label>
 
     <label class="achternaam" for="achternaam">achternaam
-    <input required type="text" name="achternaam" required value="<?php echo $row['achternaam']; ?>">
+    <input required type="text" name="merk" required value="<?php echo $row['merk']; ?>">
     </label>
     <br>
 
     <label class="adres" for="adres">adres
-    <input required  type="text" name="adres" required value="<?php echo $row['adres']; ?>">
-    </label>
-
-    <label class="plaats" for="plaats">plaats
-    <input required  type="text" name="plaats" required value="<?php echo $row['plaats']; ?>">
+    <input required  type="text" name="prijs" required value="<?php echo $row['prijs']; ?>">
     </label>
     <br>
     
