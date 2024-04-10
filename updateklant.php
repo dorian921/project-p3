@@ -1,7 +1,7 @@
 
    <?php
 
-   include "function.php";
+require_once('function.php');
    
    
    
@@ -10,11 +10,13 @@
     
     header("Location: klant.php"); 
     exit();
-    
-
+  
 
    }
 
+   if(isset($_GET['klantid'])){  
+    $klantid = $_GET['klantid'];
+    $row = getKlant($klantid);}
    
 ?>
 
@@ -65,20 +67,20 @@
    <form action="" method="post" >
 
     <label class="voornaam" for="voornaam">voornaam
-    <input   type="text" name="voornaam" <?php   echo $row['voornaam']   ?> >
+    <input type="text" name="voornaam" required value="<?php echo $row['voornaam']; ?>" >
     </label>
 
     <label class="achternaam" for="achternaam">achternaam
-    <input required type="text" name="achternaam" >
+    <input required type="text" name="achternaam" required value="<?php echo $row['achternaam']; ?>">
     </label>
     <br>
 
     <label class="adres" for="adres">adres
-    <input required  type="text" name="adres" >
+    <input required  type="text" name="adres" required value="<?php echo $row['adres']; ?>">
     </label>
 
     <label class="plaats" for="plaats">plaats
-    <input required  type="text" name="plaats" >
+    <input required  type="text" name="plaats" required value="<?php echo $row['plaats']; ?>">
     </label>
     <br>
     

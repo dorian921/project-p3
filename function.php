@@ -39,7 +39,16 @@ include_once "config.php";
   return $result;
 }
 
- 
+function getKlant($klantid){
+
+    $conn = connectDatab();
+    $sql = "SELECT * FROM " . CRUD_TABLE . " WHERE klantid = :klantid";
+    $query = $conn->prepare($sql);
+    $query->execute([':klantid'=>$klantid]);
+    $result = $query->fetch();
+
+    return $result;
+ }
 
 
 
@@ -138,7 +147,7 @@ function wijzigklant($row){
         ':achternaam'=>$row['achternaam'],
         ':adres'=>$row['adres'],
         ':plaats'=>$row['plaats'],
-        
+        ':klantid'=>$row['klantid']
         
     ]);
 
