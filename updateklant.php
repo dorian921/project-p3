@@ -1,23 +1,25 @@
 
-   <?php
+<?php
 
 require_once('function.php');
-   
-   
-   
-   if(isset($_POST["submit"])) {
-    wijzigklant($row);
-    
-    header("Location: klant.php"); 
-    exit();
+ 
+ 
+ 
+ if(isset($_POST['submit'])) {
+  
+  if(updateKlant($_POST) == true){
+header("Location: klant.php"); 
+exit();
+} 
+
   
 
-   }
+ }
 
-   if(isset($_GET['klantid'])){  
-    $klantid = $_GET['klantid'];
-    $row = getKlant($klantid);}
-   
+ if(isset($_GET['klantid'])){  
+  $klantid = $_GET['klantid'];
+  $row = getKlant($klantid);
+ 
 ?>
 
 <!DOCTYPE html>
@@ -66,6 +68,8 @@ require_once('function.php');
 
    <form action="" method="post" >
 
+   <input type="hidden" id="naam" name="klantid" required value="<?php echo $row['klantid']; ?>"><br>
+
     <label class="voornaam" for="voornaam">voornaam
     <input type="text" name="voornaam" required value="<?php echo $row['voornaam']; ?>" >
     </label>
@@ -86,11 +90,15 @@ require_once('function.php');
     
 
     <label class="submit" for="submit">
-      <input type="submit" name="submit">
+      <input type="submit" name="submit" value="Wijzig">
     </label>
  </form>
 
-  
+ <?php
+    } else {
+        "Geen klantid opgegeven<br>";
+    }
+?>
 
 
 

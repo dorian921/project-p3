@@ -123,35 +123,27 @@ function deleteklant($id){
     return $retVal;
 }
 
-function wijzigklant($row){
+function updateKlant($row){
 
-    // Maak database connectie
     $conn = connectDatab();
-
-    // Maak een query 
     $sql = "UPDATE " . CRUD_TABLE .
-    "SET 
-        voornaam = :voornaam, 
-        achternaam = :achternaam, 
-        adres = :adres, 
-        plaats = :plaats
-
+    " SET 
+    voornaam = :voornaam, 
+    achternaam = :achternaam, 
+    adres = :adres, 
+    plaats = :plaats
     WHERE klantid = :klantid
-    ";
+";
 
-    // Prepare query
     $stmt = $conn->prepare($sql);
-    // Uitvoeren
     $stmt->execute([
-        ':voornaam'=> $row['voornaam'],
+        ':voornaam'=>$row['voornaam'],
         ':achternaam'=>$row['achternaam'],
         ':adres'=>$row['adres'],
         ':plaats'=>$row['plaats'],
-        ':klantid'=>$row['klantid']
-        
+        ':klantid'=>$row['klantid'] 
     ]);
 
-    // test of database actie is gelukt
     $retVal = ($stmt->rowCount() == 1) ? true : false ;
     return $retVal;
 }
