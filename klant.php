@@ -44,6 +44,11 @@
   
 
   <div class="table">
+  <form action="#" method="post">
+        <label for="klantName">Jouw naam of adres</label>
+        <input type="text" name="klantName">
+        <input type="submit" value="Selecteren" name="selectKlantName">
+    </form>
     <?php 
     //functie: tabel weergeven
     include "function.php";

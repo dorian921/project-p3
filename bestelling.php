@@ -45,6 +45,11 @@
   
 
   <div class="table">
+  <form action="#" method="post">
+        <label for="bestellingName">Jouw bestelid of klantid</label>
+        <input type="text" name="bestellingName">
+        <input type="submit" value="Selecteren" name="selectBestellingName">
+    </form>
     <?php 
     //functie: tabel weergeven
     include "function.php";

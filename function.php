@@ -104,7 +104,7 @@ function crud(){
             
 
   //print table
-  printCrudklant($result);
+  filterklant($result);
   
   
 }
@@ -184,6 +184,27 @@ function insertklant($post){
     // test of database actie is gelukt
     $retVal = ($stmt->rowCount() == 1) ? true : false ;
     return $retVal;  
+}
+
+function filterklant(){
+    if (isset($_POST["selectKlantName"]))
+    {
+    $selector = "%" . $_POST["klantName"] . "%";
+    }
+    else
+    {
+    $selector = "%%";
+    };
+
+    $conn = connectDatab();
+    $qrySelectKlant = $conn->prepare("SELECT klantid, voornaam, achternaam, adres, plaats  FROM klanten
+                                     WHERE voornaam LIKE :selector OR achternaam LIKE :selector 
+                                     OR adres LIKE :selector OR plaats LIKE :selector");
+    $qrySelectKlant->bindValue("selector", $selector);
+    $qrySelectKlant->execute();
+    $selectedKlant = $qrySelectKlant->fetchAll(PDO::FETCH_ASSOC);
+
+    printCrudklant($selectedKlant);
 }
 
 function crud2(){
@@ -295,7 +316,7 @@ function filterproduct(){
 
 
         $conn = connectDatab();
-        $qrySelectProducts = $conn->prepare("SELECT productid, naam, merk, prijs FROM producten WHERE naam LIKE :selector OR merk LIKE :selector");
+        $qrySelectProducts = $conn->prepare("SELECT productid, naam, merk FROM producten WHERE naam LIKE :selector OR merk LIKE :selector");
         $qrySelectProducts->bindValue("selector", $selector);
         $qrySelectProducts->execute();
         $selectedProducts = $qrySelectProducts->fetchAll(PDO::FETCH_ASSOC);
@@ -309,8 +330,27 @@ function crud3(){
             
 
   //print table
-  printCrudbestellingen($result3);
-  
+  filterbestelling($result3);
+}
+
+function filterbestelling(){
+    if (isset($_POST["selectBestellingName"]))
+    {
+    $selector = "%" . $_POST["bestellingName"] . "%";
+    }
+    else
+    {
+    $selector = "%%";
+    };
+
+
+    $conn = connectDatab();
+    $qrySelectBestelling = $conn->prepare("SELECT bestelid, klantid, productid, aantal, datum FROM bestellingen WHERE bestelid LIKE :selector OR klantid LIKE :selector");
+    $qrySelectBestelling->bindValue("selector", $selector);
+    $qrySelectBestelling->execute();
+    $selectedBestelling = $qrySelectBestelling->fetchAll(PDO::FETCH_ASSOC);
+
+    printCrudbestellingen($selectedBestelling);
 }
 
 function printCrudklant($result){
