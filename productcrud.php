@@ -45,6 +45,11 @@
   
 
   <div class="table">
+  <form action="#" method="post">
+        <label for="productName">Product naam/merk</label>
+        <input type="text" name="productName">
+        <input type="submit" value="Selecteren" name="selectProductName">
+    </form>
     <?php 
     //functie: tabel weergeven
     include "function.php";

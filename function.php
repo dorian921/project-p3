@@ -203,8 +203,7 @@ function crud2(){
             
 
   //print table
-  
-  printCrudproducten($result2);
+  filterproduct($result2);
   
   
 }
@@ -282,6 +281,26 @@ function insertproduct($post){
     // test of database actie is gelukt
     $retVal = ($stmt->rowCount() == 1) ? true : false ;
     return $retVal;  
+}
+
+function filterproduct(){
+            if (isset($_POST["selectProductName"]))
+        {
+            $selector = "%" . $_POST["productName"] . "%";
+        }
+        else
+        {
+            $selector = "%%";
+        };
+
+
+        $conn = connectDatab();
+        $qrySelectProducts = $conn->prepare("SELECT productid, naam, merk, prijs FROM producten WHERE naam LIKE :selector OR merk LIKE :selector");
+        $qrySelectProducts->bindValue("selector", $selector);
+        $qrySelectProducts->execute();
+        $selectedProducts = $qrySelectProducts->fetchAll(PDO::FETCH_ASSOC);
+
+        printCrudproducten($selectedProducts);
 }
 
 function crud3(){

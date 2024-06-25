@@ -64,22 +64,22 @@ exit();
           </div>
         </nav>
 
-        <div class="titel-table">klant wijzigen</div>
+        <div class="titel-table">product wijzigen</div>
 
    <form action="" method="post" >
 
    <input type="hidden" id="naam" name="productid" required value="<?php echo $row['productid']; ?>"><br>
 
-    <label class="voornaam" for="voornaam">voornaam
+    <label class="naam" for="naam">naam
     <input type="text" name="naam" required value="<?php echo $row['naam']; ?>" >
     </label>
 
-    <label class="achternaam" for="achternaam">achternaam
+    <label class="merk" for="merk">merk
     <input required type="text" name="merk" required value="<?php echo $row['merk']; ?>">
     </label>
     <br>
 
-    <label class="adres" for="adres">adres
+    <label class="prijs" for="prijs">prijs
     <input required  type="text" name="prijs" required value="<?php echo $row['prijs']; ?>">
     </label>
     <br>
