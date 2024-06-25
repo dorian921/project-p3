@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['username'])) {
+    header('Location: loginpage.php');
+    exit;
+}
+
+$username = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,9 +48,15 @@
                   <a href="team.php"> team</a>
                 </div>
               </div>
-            </div>
+            <div class="navitem4">
+            <p>Welcome, <?php echo htmlspecialchars($username); ?>!</p>
+            <div class="navitem4-sub">
+            <a href="logout.php">Logout</a>
           </div>
-        </nav>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <div class="titel-home">ons bedrijf llc</div>
   

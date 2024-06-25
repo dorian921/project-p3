@@ -12,7 +12,7 @@ nav{
   z-index: 0;
 }
 
-.nav-cont a {
+.nav-cont a{
   font-size: 40px;
   color:#5265AA;
   text-decoration: none;
@@ -21,7 +21,7 @@ nav{
 .nav-cont {
   display: flex;
   justify-content: center;
-  align-items:  baseline;
+  align-items: center;
   padding-left: 40%;
   margin: 10px; 
 }
@@ -34,14 +34,16 @@ nav{
 
 .navitem1,
 .navitem2,
-.navitem3{
+.navitem3,
+.navitem4{
  margin: 20px;
 }
 
 
 .navitem1-sub,
 .navitem2-sub,
-.navitem3-sub{
+.navitem3-sub,
+.navitem4-sub {
   display: none;
   font-size: 20px;
   border: 5px solid #3D3C5A ;
@@ -50,7 +52,8 @@ nav{
 
 .navitem1:hover .navitem1-sub,
 .navitem2:hover .navitem2-sub,
-.navitem3:hover .navitem3-sub {
+.navitem3:hover .navitem3-sub,
+.navitem4:hover .navitem4-sub {
   display: block;
   position: absolute;
   width: 190px;
@@ -67,10 +70,17 @@ nav{
   width: 170px;
   
 }
+.navitem4 p {
+  margin: 0%;
+  font-size: 35px;
+  color:#5265AA;
+  text-decoration: none;
+}
 
 .navitem1-sub :hover,
 .navitem2-sub :hover,
-.navitem3-sub :hover{
+.navitem3-sub :hover,
+.navitem4-sub :hover {
   color: black;
 }
 
